@@ -81,7 +81,7 @@ def main():
 
     # Producto cartesiano entre años y edades
     producto_cartesiano = funciones.calcular_producto_cartesiano(anios_nacimiento, edades)
-    print("\n=== PRODUCTO CARTESIANO (Años x Edades) ===")
+    print("\n Producto Cartesiano ( año x edades )")
     for par in producto_cartesiano:
         print(par)
 
