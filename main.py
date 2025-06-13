@@ -85,6 +85,22 @@ def main():
     for par in producto_cartesiano:
         print(par)
 
+    # Ejecución de las funciones que representan las expresiones en lenguaje natural
+    # Los dígitos decimales que no están ni en A ni en B
+    # Suponiendo que las funciones se llaman: digitos_no_en_A_ni_B, digitos_en_A_no_en_B, digitos_en_B_no_en_A
+    conjuntos = datos_dni["conjuntos"]
+    if len(conjuntos) >= 2:
+        A = conjuntos[0]
+        B = conjuntos[1]
+        print("\nDígitos decimales que no están ni en A ni en B:")
+        print(funciones.digitos_no_en_ninguno(A, B))
+        print("\nDígitos pares que estén tanto en A como en B:")
+        print(funciones.digitos_pares_en_ambos(A, B))
+        print("\nDígitos decimales que conformen el complemento del conjunto A:")
+        print(funciones.complemento_de_A(A, B))
+    else:
+        print("\nNo hay suficientes DNIs para comparar conjuntos A y B.")
+
 # Ejecutar el programa
 if __name__ == "__main__":
     main()

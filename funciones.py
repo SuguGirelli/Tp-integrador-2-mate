@@ -8,6 +8,7 @@ def es_bisiesto(anio):
 
 def procesar_dnies(dnies):
     """Procesa los DNIs y devuelve conjuntos, dígitos totales y operaciones con conjuntos."""
+    """La función recibe una lista de DNIs y devuelve un diccionario de datosn con clave:valor"""
     conjuntos_dnis = [set(dni) for dni in dnies]
     digitos_totales = [list(map(int, dni)) for dni in dnies]
 
@@ -51,3 +52,21 @@ def calcular_frecuencias(digitos):
 def calcular_producto_cartesiano(anios, edades):
     """Devuelve el producto cartesiano entre años y edades."""
     return [(a, e) for a in anios for e in edades]
+
+###########################################################
+### Funciones python de expresiones en lenguaje natural ### 
+###########################################################
+
+# Los dígitos decimales que no están ni en A ni en B
+def digitos_no_en_ninguno(A, B):
+    todos = set(range(10))
+    return todos - (A | B)
+
+# Todos los dígitos pares que estén tanto en A como en B
+def digitos_pares_en_ambos(A, B):
+    return {x for x in (A & B) if x % 2 == 0}
+
+# Todos los dígitos decimales que conformen el complemento del conjunto A
+def complemento_de_A(A):
+    todos = set(range(10))
+    return todos - A
