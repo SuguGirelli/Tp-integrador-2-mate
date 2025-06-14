@@ -60,13 +60,16 @@ def calcular_producto_cartesiano(anios, edades):
 # Los dígitos decimales que no están ni en A ni en B
 def digitos_no_en_ninguno(A, B):
     todos = set(range(10))
-    return todos - (A | B)
+    A_int = {int(x) for x in A}
+    B_int = {int(x) for x in B}
+    return todos - (A_int | B_int)
 
 # Todos los dígitos pares que estén tanto en A como en B
 def digitos_pares_en_ambos(A, B):
-    return {x for x in (A & B) if x % 2 == 0}
+    return {x for x in (A & B) if int(x) % 2 == 0}
 
 # Todos los dígitos decimales que conformen el complemento del conjunto A
 def complemento_de_A(A):
     todos = set(range(10))
-    return todos - A
+    A_int = {int(x) for x in A}
+    return todos - A_int

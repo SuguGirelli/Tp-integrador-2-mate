@@ -82,8 +82,10 @@ def main():
     # Producto cartesiano entre años y edades
     producto_cartesiano = funciones.calcular_producto_cartesiano(anios_nacimiento, edades)
     print("\n Producto Cartesiano ( año x edades )")
+    print("{ ", end ='')
     for par in producto_cartesiano:
-        print(par)
+        print(par, end=' ')
+    print("}")
 
     # Ejecución de las funciones que representan las expresiones en lenguaje natural
     # Los dígitos decimales que no están ni en A ni en B
@@ -97,7 +99,7 @@ def main():
         print("\nDígitos pares que estén tanto en A como en B:")
         print(funciones.digitos_pares_en_ambos(A, B))
         print("\nDígitos decimales que conformen el complemento del conjunto A:")
-        print(funciones.complemento_de_A(A, B))
+        print(funciones.complemento_de_A(A))
     else:
         print("\nNo hay suficientes DNIs para comparar conjuntos A y B.")
 
